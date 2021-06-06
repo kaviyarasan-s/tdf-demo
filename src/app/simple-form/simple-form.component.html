@@ -1,0 +1,30 @@
+<div>
+        <h3>{{formName}}</h3>
+        <form name="userForm" #userForm="ngForm">
+          <div>
+            <label>User name</label>
+            <input type="text" class="form-control" name="username" #username ngModel>
+          </div>
+          <div>
+            <label>Email</label>
+            <input type="text" class="form-control" name="email" ngModel>
+          </div>
+          <div>
+            <label>Phone Number</label>
+            <input type="text" class="form-control" name="phonenumber" ngModel>
+          </div>
+          <div>
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" ngModel>
+          </div>
+          <div>
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+      
+      <div>
+        <h3>Form Value</h3>
+        {{userForm.value | json}}
+      </div>
+      

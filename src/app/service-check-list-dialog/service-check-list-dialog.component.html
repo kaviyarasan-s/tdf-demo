@@ -1,0 +1,11 @@
+<form>
+    <div>
+        <h2>{{data.serviceName}}</h2>
+    </div>
+    <div *ngFor="let detail of data.serviceDetails">
+        <mat-checkbox name="{{detail.id}}" [(ngModel)]="detail.check">{{detail.description}}</mat-checkbox>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" (click)="saveDetails()">Save</button>
+    </div>
+</form>

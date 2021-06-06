@@ -1,0 +1,35 @@
+<form #serviceCheckListForm="ngForm">
+    <div>
+        <mat-form-field>
+            <mat-label>Service Name</mat-label>
+            <input matInput name="serviceName" [(ngModel)]="userInputData.serviceName">
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-label>Details</mat-label>
+        <div *ngFor="let detail of userInputData.serviceDetails;let i= index">
+            <mat-form-field>
+                <input matInput name="{{detail.id}}" [(ngModel)]="detail.description">
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-icon style="cursor: pointer;" (click)="addrow()" aria-hidden="false" aria-label="Add Entry">add
+            </mat-icon>
+        </div>
+        <div>
+            <mat-icon style="cursor: pointer;" (click)="deleteRow()" aria-hidden="false" aria-label="Remove Entry">close
+            </mat-icon>
+        </div>
+    </div>
+    <div>
+        <button mat-raised-button color="primary" (click)="saveServiceCheckList()">Save</button>
+    </div>
+</form>
+
+<div>
+    User Input Data : {{userInputData |json}}
+</div>
+
+<div>
+    <button mat-raised-button color="accent" (click)="openDialog()">Open Dialog</button>
+</div>
